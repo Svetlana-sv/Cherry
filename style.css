@@ -10,7 +10,7 @@ body {
 
 /*HEADER*/
 header {
-    height: 50px;
+    min-height: 50px;
 
     background: linear-gradient(to top, #2D383A, #373E44);
     margin: 0;
@@ -71,6 +71,59 @@ header button {
     background-image: url('img/search.png');
 }
 
+.img {
+    width: 1100px;
+    height: 300px;
+    background-size: cover;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .header_container {
+        flex-direction: column;
+    }
+
+    header div {
+        padding-top: 10px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    .block2 {
+        flex-direction: column;
+    }
+    .img {
+        max-width: 100%;
+        height: auto;
+    }
+    .container2 {
+        max-width: 90%;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu_item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        float: none;
+        max-width: 90%;
+        padding: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
 /*MAIN*/
 .container {
     margin: 0;
@@ -90,23 +143,26 @@ header button {
 
 .selection_begin_photo {
     position: relative;
-    display: inline-block;
+
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-h2 {
+.headline{
     position: absolute;
     color: #A6AEB9;
     font-size: 14px;
-    top: 40px;
+    padding-top: 40px;
     left: 60px;
     width: 50%;
 }
 
 .menu {
+    max-width: 100%;
     margin: 0;
     background-color: #95161F;
-    height: 40px;
+    min-height: 40px;
 }
 
 .menu_item {
@@ -120,22 +176,47 @@ h2 {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.right_text{
-    color:#5B636E;
+
+.right_text {
+    color: #5B636E;
     font-size: 12px;
 }
+@media (max-width: 1100px){
+    .headline {
+        font-size: 10px;
+        padding-top: 10px;
+        left: 10px;
+        width: 95%;
+    }
+    .right_block {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .right_text_block {
+        max-width: 100%;
+    }
+   .main_text{
+       padding-left: 10px;
+       padding-right: 10px;
+   }
+
+}
+
 
 a {
     text-decoration: none;
     color: #FFFFFF;
 }
-.path{
+
+.path {
     margin-top: 5px;
     font-size: 12px;
     margin-left: 5px;
     color: #6F6F71;
 }
-.title_main{
+
+.title_main {
     margin-bottom: 10px;
     margin-top: 5px;
     font-weight: bold;
@@ -145,24 +226,22 @@ a {
     margin: 0;
     max-width: 100%;
     display: flex;
-    
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .main_text {
-    max-width: 80%;
+    max-width: 100%;
     padding-right: 30px;
-    padding-left: 30px;  
+    padding-left: 30px;
 }
 
 .right_block {
-    max-width: 19%;
+    max-width: 100%;
 }
 
 fieldset {
     position: relative;
     width: 200px;
+    height: auto;
     margin: 10px;
     background-color: #F3F3F3;
 }
@@ -185,12 +264,10 @@ button {
     background: #9F1C24;
     border: 5px solid #FFFFFF;
     cursor: pointer;
-    
+
 }
 
-label {
-    margin-bottom: 15px;
-}
+
 
 /*LEFT BLOCK*/
 div .title_main {
@@ -204,9 +281,11 @@ div .title_main {
     color: #A5AEB7;
     font-size: 12px;
 }
-.title_img{
+
+.title_img {
     font-weight: bold;
 }
+
 .three_imgs {
     margin: 0;
     max-width: 100%;
@@ -252,7 +331,7 @@ table {
     border-radius: 10px;
     border-spacing: 0;
     text-align: center;
-    width: 100%;
+    max-width: 100%;
     margin: auto;
     margin-top: 15px;
 }
@@ -302,6 +381,21 @@ tr td:last-child {
     border-right: none;
 }
 
+@media(max-width:1100px) {
+    td {
+        padding: 2px 0px;
+    }
+
+    th {
+
+        padding: 2px 0px;
+    }
+    
+    table {
+        max-width: 100%;
+    }
+}
+
 /*FOOTER*/
 footer {
     border-top: 7px solid #AE4B5D;
@@ -322,7 +416,7 @@ footer {
 
 
 .container_footer {
-    width: 1100px;
+    max-width: 1100px;
     display: flex;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -372,6 +466,24 @@ footer {
 
 .footer_menu_item_content {
     text-align: center;
+}
+
+@media (max-width: 1199px) {
+    footer .footer_list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+    footer .footer_item {
+        margin: 0 auto;
+    }
 }
 
 p {
